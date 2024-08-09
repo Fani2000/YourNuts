@@ -1,0 +1,12 @@
+C:\Users\keorapetse.fani\Documents\projects\YourNuts\KafkaFlowIntegration\bin\Debug\net8.0\KafkaFlowIntegration.deps.json
+C:\Users\keorapetse.fani\Documents\projects\YourNuts\KafkaFlowIntegration\bin\Debug\net8.0\KafkaFlowIntegration.dll
+C:\Users\keorapetse.fani\Documents\projects\YourNuts\KafkaFlowIntegration\bin\Debug\net8.0\KafkaFlowIntegration.pdb
+C:\Users\keorapetse.fani\Documents\projects\YourNuts\KafkaFlowIntegration\obj\Debug\net8.0\KafkaFlowIntegration.csproj.AssemblyReference.cache
+C:\Users\keorapetse.fani\Documents\projects\YourNuts\KafkaFlowIntegration\obj\Debug\net8.0\KafkaFlowIntegration.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\keorapetse.fani\Documents\projects\YourNuts\KafkaFlowIntegration\obj\Debug\net8.0\KafkaFlowIntegration.AssemblyInfoInputs.cache
+C:\Users\keorapetse.fani\Documents\projects\YourNuts\KafkaFlowIntegration\obj\Debug\net8.0\KafkaFlowIntegration.AssemblyInfo.cs
+C:\Users\keorapetse.fani\Documents\projects\YourNuts\KafkaFlowIntegration\obj\Debug\net8.0\KafkaFlowIntegration.csproj.CoreCompileInputs.cache
+C:\Users\keorapetse.fani\Documents\projects\YourNuts\KafkaFlowIntegration\obj\Debug\net8.0\KafkaFlowIntegration.dll
+C:\Users\keorapetse.fani\Documents\projects\YourNuts\KafkaFlowIntegration\obj\Debug\net8.0\refint\KafkaFlowIntegration.dll
+C:\Users\keorapetse.fani\Documents\projects\YourNuts\KafkaFlowIntegration\obj\Debug\net8.0\KafkaFlowIntegration.pdb
+C:\Users\keorapetse.fani\Documents\projects\YourNuts\KafkaFlowIntegration\obj\Debug\net8.0\ref\KafkaFlowIntegration.dll
