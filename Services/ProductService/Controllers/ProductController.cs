@@ -1,8 +1,6 @@
-﻿using KafkaFlow;
-using KafkaFlow.Producers;
+﻿using KafkaFlowIntegration;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ProductService.Service;
 using System.Text.Json;
 using YourNuts.Domain;
 using YourNuts.Domain.Models;
@@ -14,13 +12,12 @@ namespace ProductService.Controllers;
 public class ProductController : ControllerBase
 {
     private readonly YourNutsDbContext _context;
+    private readonly KafkaService kafkaContext;
 
-    private readonly IProducerAccessor producer;
-
-    public ProductController(YourNutsDbContext context, IProducerAccessor producer)
+    public ProductController(YourNutsDbContext context, KafkaService kafkaContext)
     {
         _context = context;
-        this.producer = producer;
+        this.kafkaContext = kafkaContext;
     }
 
     [HttpGet]
@@ -53,30 +50,25 @@ public class ProductController : ControllerBase
 
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateProduct(Guid id, Product product)
+    public async Task<IActionResult> UpdateProduct(Guid id, UpdateProductDTO product)
     {
-        // if (id != product.Id) return BadRequest();
-
         var product_ = await _context.Products.FindAsync(id);
         
         if(product_ == null) return NotFound();
 
         _context.Entry(product_).State = EntityState.Modified;
 
-        product_.Price = product.Price;
-        product_.Name = product.Name;
-        product_.Description = product.Description;
-        product_.Image = product.Image;
+        product_.Price = product.Price ?? product_.Price;
+        product_.Name = product.Name ?? product_.Name;
+        product_.Description = product.Description ?? product_.Description;
+        product_.Image = product.Image ?? product_.Image;
+        product_.Quantity= product.Quantity > 0 ? product.Quantity ?? product_.Quantity : 1;
 
         _context.Products.Update(product_);
 
         await _context.SaveChangesAsync();
 
-        var json = JsonSerializer.Serialize(product_);
-
-        var pd = producer.GetProducer("product-producer");
-
-        await pd.ProduceAsync("product-updated", json);
+        await kafkaContext.PublishAsync("product-updated", product_);
 
         return CreatedAtAction(nameof(GetProduct), new { id = product_.Id }, product_);
     }
@@ -92,9 +84,12 @@ public class ProductController : ControllerBase
 
        await _context.SaveChangesAsync();
 
-        await producer["product-deleted"].ProduceAsync("product-deleted", product);
+        await kafkaContext.PublishAsync("product-deleted", product);
 
         return NoContent();
         
     }
 }
+
+public record class UpdateProductDTO(string? Name, string? Description, decimal? Price, byte[]? Image, int? Quantity);
+

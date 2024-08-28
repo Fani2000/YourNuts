@@ -8,13 +8,22 @@ public class Order
     [Key]
     public Guid Id { get; set; }
 
-    [Required]
-    public Guid CustomerId { get; set; }
-
     public DateTime OrderDate = DateTime.Now;
 
-    [ForeignKey("CustomerId")]
-    public Customer? Customer { get; set; }
+    public double TotalPrice { get; set; } = 100;
 
-    public ICollection<OrderProduct>? OrderProducts { get; set; }
+    [Required]
+    [StringLength(50)]
+    public string? FirstName { get; set; }
+
+    [Required]
+    [StringLength(50)]
+    public string? LastName { get; set; }
+
+    [Required]
+    [StringLength(100)]
+    public string? Email { get; set; }
+
+    [StringLength(20)]
+    public string? PhoneNumber { get; set; }
 }

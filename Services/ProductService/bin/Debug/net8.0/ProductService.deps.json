@@ -1977,6 +1977,7 @@
       },
       "KafkaFlowIntegration/1.0.0": {
         "dependencies": {
+          "Domain": "1.0.0",
           "KafkaFlow": "3.0.10",
           "KafkaFlow.Abstractions": "3.0.10",
           "KafkaFlow.LogHandler.Console": "3.0.10",

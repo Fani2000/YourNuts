@@ -36,3 +36,4 @@ C:\Users\keorapetse.fani\Documents\projects\YourNuts\ApiGateway-Ocelot\obj\Debug
 C:\Users\keorapetse.fani\Documents\projects\YourNuts\ApiGateway-Ocelot\obj\Debug\net8.0\ApiGateway-Ocelot.genruntimeconfig.cache
 C:\Users\keorapetse.fani\Documents\projects\YourNuts\ApiGateway-Ocelot\obj\Debug\net8.0\ref\ApiGateway-Ocelot.dll
 C:\Users\keorapetse.fani\Documents\projects\YourNuts\ApiGateway-Ocelot\bin\Debug\net8.0\ocelot.json
+C:\Users\keorapetse.fani\Documents\projects\YourNuts\ApiGateway-Ocelot\obj\Debug\net8.0\ApiGateway-Ocelot.sourcelink.json

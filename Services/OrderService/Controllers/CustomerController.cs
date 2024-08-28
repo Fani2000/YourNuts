@@ -5,6 +5,7 @@ using YourNuts.Domain.Models;
 
 namespace OrderService.Controllers;
 
+/*
 [ApiController]
 [Route("api/[controller]")]
 public class CustomersController : ControllerBase
@@ -33,7 +34,7 @@ public class CustomersController : ControllerBase
 
     // GET api/customers/{id}
     [HttpGet("{id}")]
-    public async Task<ActionResult<Customer>> GetCustomer(int id)
+    public async Task<ActionResult<Customer>> GetCustomer(Guid id)
     {
         var customer = await _context.Customers.FindAsync(id);
 
@@ -45,3 +46,4 @@ public class CustomersController : ControllerBase
         return customer;
     }
 }
+*/

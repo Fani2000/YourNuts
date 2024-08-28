@@ -23,5 +23,5 @@ public class Customer
     [StringLength(20)]
     public string? PhoneNumber { get; set; }
 
-    public ICollection<Order>? Orders { get; set; }
+    public Order? Orders { get; set; }
 }

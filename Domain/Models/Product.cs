@@ -13,8 +13,14 @@ public class Product
     [Required]
     public decimal Price { get; set; }
 
+    [Required]
+    public int Quantity { get; set; } = 1;
+
     [StringLength(250)]
     public string Description { get; set; }
 
     public byte[] Image { get; set; }
+
+    public bool isOutOfStock { get; set; } = false;
+
 }

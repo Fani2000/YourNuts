@@ -51,5 +51,53 @@
         }
       ]
     },
+    {
+      "UpstreamPathTemplate": "/api/orders/order-details",
+      "UpstreamHttpMethod": ["GET", "POST"],
+      "DownstreamPathTemplate": "/api/orders/order-details",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port":  5003
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/orders/order-details/{id}",
+      "UpstreamHttpMethod": ["GET", "DELETE", "PUT"],
+      "DownstreamPathTemplate": "/api/orders/order-details/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port":  5003
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/customers",
+      "UpstreamHttpMethod": ["POST"],
+      "DownstreamPathTemplate": "/api/customers",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port":  5003
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/customers/{id}",
+      "UpstreamHttpMethod": ["GET"],
+      "DownstreamPathTemplate": "/api/customers/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port":  5003
+        }
+      ]
+    },
   ]
 }
